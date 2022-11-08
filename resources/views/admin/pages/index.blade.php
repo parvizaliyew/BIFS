@@ -6,6 +6,6 @@
 @section('content')
 <div class="main_content_iner ">
     
-    </div>
+</div>
     
 @endsection
