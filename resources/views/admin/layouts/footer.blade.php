@@ -167,7 +167,7 @@
     <script src="{{asset('manager/')}}/vendors/chart_am/animated.js"></script>
     <script src="{{asset('manager/')}}/vendors/chart_am/kelly.js"></script>
     <script src="{{asset('manager/')}}/vendors/chart_am/chart-custom.js"></script>
-    
+    @stack('js')
     <script src="{{asset('manager/')}}/js/custom.js"></script>
     </body>
     

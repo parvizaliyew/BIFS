@@ -14,24 +14,35 @@
     <span>Admin</span>
     </a>
     </li> 
-  
+
+    @role('admin')
     <li class="mm-active">
-    <a  href="{{ route('admin.profil_add') }}" aria-expanded="false">
-    <div class="icon_menu">
-        <i class="ti-user"></i>
-    </div>
-    <span>Profil Əlavə et</span>
-    </a>
-    </li> 
+        <a  href="{{ route('admin.profil_add') }}" aria-expanded="false">
+        <div class="icon_menu">
+            <i class="ti-user"></i>
+        </div>
+        <span>Profil Əlavə et</span>
+        </a>
+        </li> 
+    @endrole
+  
 
     <li class="mm-active">
         <a  href="{{ route('admin.setting') }}" aria-expanded="false">
         <div class="icon_menu">
             <i class="ti-settings"></i>
         </div>
-        <span>Ayarlar</span>
+        <span>Əlaqə</span>
         </a>
-        </li> 
+    </li> 
+    <li class="mm-active">
+        <a  href="{{ route('admin.partner') }}" aria-expanded="false">
+        <div class="icon_menu">
+            <i class="ti-star"></i>
+        </div>
+        <span>Partnyorlar</span>
+        </a>
+    </li>   
     </ul>
     </nav>
     
