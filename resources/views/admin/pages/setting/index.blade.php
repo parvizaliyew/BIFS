@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('title')
-    Contact
+    Setting
 @endsection
 @section('content')
 <div class="main_content_iner ">
@@ -10,7 +10,7 @@
         <div class="white_card_header">
         <div class="box_header m-0">
         <div class="main-title">
-        <h3 class="m-0">Əlaqə</h3>
+        <h3 class="m-0">Ayarlar</h3>
         </div>
         <div class="page-header">
             <nav aria-label="breadcrumb">

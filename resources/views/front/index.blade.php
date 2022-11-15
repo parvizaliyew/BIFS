@@ -9,7 +9,7 @@
 
                 <!-- Carousel Slide 1 -->
                 <div class="owl-item position-relative">
-                    <div class="background-image-wrapper position-absolute top-0 left-0 right-0 bottom-0" data-appear-animation="kenBurnsToRight" data-appear-animation-duration="30s" data-plugin-options="{'minWindowWidth': 0}" data-carousel-onchange-show style="background-image: url(img/demos/construction/slides/slide-1.jpg); background-size: cover; background-position: center;"></div>
+                    <div class="background-image-wrapper position-absolute top-0 left-0 right-0 bottom-0" data-appear-animation="kenBurnsToRight" data-appear-animation-duration="30s" data-plugin-options="{'minWindowWidth': 0}" data-carousel-onchange-show style="background-image: url({{ asset('front') }}/img/background-1.jpg); background-size: cover; background-position: center;"></div>
                     <div class="container position-relative z-index-1 h-100">
                         <div class="row align-items-center h-100">
                             <div class="col-lg-9 col-xl-8 position-relative mx-auto mt-5 pt-5">
@@ -25,7 +25,7 @@
                             </div>
                         </div>
                         <div class="position-absolute left-100pct bottom-0 transform3dx-n50 w-75 ms-5">
-                            <img src="{{ asset('front') }}/img/demos/construction/slides/slide-1-engineer.png" class="img-fluid mw-100 w-auto appear-animation" alt="Engineer Image" data-appear-animation="fadeIn" data-appear-animation-delay="100" />
+                            <img src="{{ asset('front') }}/img/background-2.jpg" class="img-fluid mw-100 w-auto appear-animation" alt="Engineer Image" data-appear-animation="fadeIn" data-appear-animation-delay="100" />
                         </div>
                         <p class="position-absolute bottom-15 right-0 text-color-light font-weight-bold text-5-5 line-height-3 text-end pb-0 pb-lg-5 mb-0 d-none d-sm-block">
                             <span class="d-block position-relative z-index-1 pb-5 ps-lg-3 mb-5-5 appear-animation" data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="1900">#1 Fastest-Growing Company</span>
@@ -39,7 +39,7 @@
                 </div>
 
                 <!-- Carousel Slide 2 -->
-                <div class="owl-item position-relative" style="background-image: url({{ asset('front') }}/img/demos/construction/slides/slide-2.jpg); background-size: cover; background-position: center;">
+                <div class="owl-item position-relative" style="background-image: url({{ asset('front') }}/img/background.jpg); background-size: cover; background-position: center;">
                     <div class="container position-relative z-index-1 h-100">
                         <div class="row align-items-center h-100 pt-5">
                             <div class="col-xl-8 position-relative ms-auto mt-5 pt-5">
@@ -208,7 +208,7 @@
                                     c17.94,9.21,51.96,27.97,87.87,57.83c28.32,23.54,43.15,41.79,52.16,54.24c5.04,6.97,9.21,13.45,12.57,19.04"/>
                             </g>
                         </g>
-                    </svg>								
+                    </svg>
 
                     <div class="diamonds-wrapper">
                         <ul class="diamonds mb-0">

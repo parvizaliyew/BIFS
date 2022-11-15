@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Front\FrontController;
 use App\Http\Controllers\Admin\PartnerController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\DashboardController;
 
@@ -52,9 +53,13 @@ Route::group(['middleware' => 'notLogin'],function()
     Route::get('/partners-delete/{id}',[PartnerController ::class,'destroy'])->name('partner.destroy');
 
 
-
-
-
+    //Products
+    Route::get('/products',[ProductController::class,'index'])->name('product');
+    Route::get('/product-create',[ProductController::class,'create'])->name('product.create');
+    Route::post('/product-store',[ProductController ::class,'store'])->name('product.store');
+    Route::get('/product-destroy/{id}',[ProductController ::class,'destroy'])->name('product.destroy');
+    Route::get('product-edit/{id}',[ProductController::class,'edit'])->name('product.edit');
+    Route::post('/product-update{id}',[ProductController ::class,'update'])->name('product.update');
 
 
     Route::get('/logout',[AuthController ::class,'logout'])->name('logout');

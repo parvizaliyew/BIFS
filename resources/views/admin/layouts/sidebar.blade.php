@@ -42,7 +42,16 @@
         </div>
         <span>Partnyorlar</span>
         </a>
-    </li>   
+    </li>  
+    
+    <li class="mm-active">
+        <a  href="{{ route('admin.product') }}" aria-expanded="false">
+        <div class="icon_menu">
+            <i class="ti-star"></i>
+        </div>
+        <span>Məhsullar</span>
+        </a>
+    </li>
     </ul>
     </nav>
     
