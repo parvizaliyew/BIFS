@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Front\FrontController;
+use App\Http\Controllers\Admin\CounterController;
+use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SettingController;
@@ -52,6 +54,22 @@ Route::group(['middleware' => 'notLogin'],function()
     Route::post('/partners-store/{id}',[PartnerController ::class,'update'])->name('partner.update');
     Route::get('/partners-delete/{id}',[PartnerController ::class,'destroy'])->name('partner.destroy');
 
+    //**** Projects ****/
+    Route::get('/projects',[\App\Http\Controllers\Admin\ProjectController::class,'index'])->name('project');
+    Route::get('/project-create',[\App\Http\Controllers\Admin\ProjectController ::class,'create'])->name('project.create');
+    Route::post('/project-store',[\App\Http\Controllers\Admin\ProjectController ::class,'store'])->name('project.store');
+    Route::get('/project-edit/{id}',[\App\Http\Controllers\Admin\ProjectController ::class,'edit'])->name('project.edit');
+    Route::post('/project-store/{id}',[\App\Http\Controllers\Admin\ProjectController ::class,'update'])->name('project.update');
+    Route::get('/project-delete/{id}',[\App\Http\Controllers\Admin\ProjectController ::class,'destroy'])->name('project.destroy');
+
+     //**** Brends ****/
+    Route::get('/brends',[\App\Http\Controllers\Admin\BrendController::class,'index'])->name('brend');
+    Route::get('/brend-create',[\App\Http\Controllers\Admin\BrendController ::class,'create'])->name('brend.create');
+    Route::post('/brend-store',[\App\Http\Controllers\Admin\BrendController ::class,'store'])->name('brend.store');
+    Route::get('/brend-edit/{id}',[\App\Http\Controllers\Admin\BrendController ::class,'edit'])->name('brend.edit');
+    Route::post('/brend-store/{id}',[\App\Http\Controllers\Admin\BrendController ::class,'update'])->name('brend.update');
+    Route::get('/brend-delete/{id}',[\App\Http\Controllers\Admin\BrendController ::class,'destroy'])->name('brend.destroy');
+
 
     //Products
     Route::get('/products',[ProductController::class,'index'])->name('product');
@@ -61,11 +79,33 @@ Route::group(['middleware' => 'notLogin'],function()
     Route::get('product-edit/{id}',[ProductController::class,'edit'])->name('product.edit');
     Route::post('/product-update{id}',[ProductController ::class,'update'])->name('product.update');
 
+    //Counter
+    Route::get('/counters',[CounterController::class,'index'])->name('counter');
+    Route::post('/counter-update{id}',[CounterController ::class,'update'])->name('counter.update');
 
-    Route::get('/logout',[AuthController ::class,'logout'])->name('logout');
+    //Messages
+    Route::get('/messages',[MessageController::class,'index'])->name('message');
+    Route::get('/message-destroy/{id}',[MessageController ::class,'destroy'])->name('message.destroy');
+    Route::get('message-edit/{id}',[MessageController::class,'edit'])->name('message.edit');
+    
+    Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 });
 
 
 });
 
-Route::get('/',[FrontController::class,'index'])->name('index');
+//********* FRONT *********//
+Route::get('/',[FrontController::class,'index'])->name('index.az');
+Route::get('/en',[FrontController::class,'index'])->name('index.en');
+
+Route::get('/mehsullar',[FrontController::class,'product'])->name('product.az');
+Route::get('/en/products',[FrontController::class,'product'])->name('product.en');
+
+Route::get('/mehsul/{slug}',[FrontController::class,'product_details'])->name('product_details.az');
+Route::get('/en/product/{slug}',[FrontController::class,'product_details'])->name('product_details.en');
+
+Route::get('/elaqe',[FrontController::class,'contact'])->name('contact.az');
+Route::get('/en/contact',[FrontController::class,'contact'])->name('contact.en');
+
+Route::post('/elaqe',[FrontController::class,'contact_post'])->name('contact_post.az');
+Route::post('/en/contact',[FrontController::class,'contact_post'])->name('contact_post.en');

@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('title')
-    Product Add
+    Project Add
 @endsection
 @section('content')
 <div class="main_content_iner ">
@@ -10,7 +10,7 @@
         <div class="white_card_header">
         <div class="box_header m-0">
         <div class="main-title">
-        <h3 class="m-0">Məhsul əlavə et</h3>
+        <h3 class="m-0">Layihə əlavə et</h3>
         </div>
         <div class="page-header">
             <nav aria-label="breadcrumb">
@@ -25,7 +25,7 @@
         </div>
         <div class="white_card_body">
         <div class="card-body">
-        <form method="POST" enctype="multipart/form-data" action="{{ route('admin.product.store') }}">
+        <form method="POST" enctype="multipart/form-data" action="{{ route('admin.project.store') }}">
         @csrf
         <div class="row mb-3">
          <div class="col-md-12">
@@ -39,55 +39,29 @@
             @enderror
          </div>
            </div>
-            <div class="row mb-3">
-                <div class="form-group translate">
-                    <label for="">Qısa Mətn</label>
-                    <input type="hidden" name="short_desc" value='{"az":"","en":""}'>
-                    <textarea name=""    class="form-control"></textarea>
-                </div>
-                @error('short_desc')
-                <span class="text-danger mt-2">{{ $message }}</span> <br>
-                @enderror
-            </div>
        <div class="row mb-3">
         <div class="form-group translate">
-            <label for="">Mətn</label>
+            <label for="desc">Mətn</label>
             <input type="hidden" name="desc" value='{"az":"","en":""}'>
-            <textarea name=""    class="form-control"></textarea>
+            <textarea name=""   id="desc"  class="form-control"></textarea>
         </div>
         @error('desc')
         <span class="text-danger mt-2">{{ $message }}</span> <br>
         @enderror
        </div>
-
         <div class="row mb-3">
-
         <div class="col-md-6">
-            <label for="">Şəkillər</label>
+            <label for="">Şəkil</label>
+
             <div class="mb-3">
-                <input name="images[]" multiple class="form-control" type="file" id="formFile">
+                <input name="img" class="form-control" type="file" id="formFile">
             </div>
-        @error('images')
+        @error('img')
         <span class="text-danger mt-2">{{ $message }}</span> <br>
         @enderror
         </div>
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="">logo</label>
-
-                    <div class="mb-3">
-                        <input name="logo" class="form-control" type="file" id="formFile">
-                    </div>
-                    @error('logo')
-                    <span class="text-danger mt-2">{{ $message }}</span> <br>
-                    @enderror
-                </div>
-            </div>
-
         </div>
-
-
-        <a href="{{ route('admin.product') }}" class="btn btn-success">Geri</a>
+        <a href="{{ route('admin.project') }}" class="btn btn-success">Geri</a>
         <button type="submit" class="btn btn-primary">Əlavə Et</button>
         </form>
         </div>

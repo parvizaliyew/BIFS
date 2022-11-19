@@ -4,15 +4,15 @@
 					<div class="row pt-4 mb-5 gy-4">
 						<div class="col-lg-2 align-self-center">
 							<a href="demo-construction.html">
-								<img alt="Porto" class="img-fluid logo" width="123" height="48" src="{{ asset('front') }}/img/demos/construction/logo-dark.png">
+								<img alt="Porto" class="img-fluid logo" width="123" height="48" src="{{ asset('front') }}/img/BIFS-logo-Footer.png">
 							</a>
 						</div>
 						<div class="col-lg-4 offset-lg-1">
 							<h4 class="text-color-dark font-weight-bold mb-4-5">Navigation</h4>
 							<ul class="list list-unstyled columns-lg-2">
 								<li>
-									<a href="demo-construction.html" class="text-color-hover-primary">
-										Home
+									<a href="{{ route('index.'.app()->getLocale()) }}" class="text-color-hover-primary">
+										{{ __('lang.esas_sehife') }}
 									</a>
 								</li>
 								<li>
@@ -21,8 +21,8 @@
 									</a>
 								</li>
 								<li>
-									<a href="demo-construction-services.html" class="text-color-hover-primary">
-										Services
+									<a href="{{ route('product.'.app()->getLocale()) }}" class="text-color-hover-primary">
+										{{ __('lang.mehsullar') }}
 									</a>
 								</li>
 								<li>
@@ -36,8 +36,8 @@
 									</a>
 								</li>
 								<li>
-									<a href="demo-construction-contact.html" class="text-color-hover-primary">
-										Contact
+									<a href="{{ route('contact.'.app()->getLocale()) }}" class="text-color-hover-primary">
+										{{ __('lang.elaqe') }}
 									</a>
 								</li>
 							</ul>
@@ -117,5 +117,6 @@
 		<!-- Theme Initialization Files -->
 		<script src="{{ asset('front') }}/js/theme.init.js"></script>
 
+            @stack('js')
 	</body>
-</html> 
+</html>

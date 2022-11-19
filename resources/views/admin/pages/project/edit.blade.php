@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('title')
-    Product Add
+    Project Edit
 @endsection
 @section('content')
 <div class="main_content_iner ">
@@ -10,7 +10,7 @@
         <div class="white_card_header">
         <div class="box_header m-0">
         <div class="main-title">
-        <h3 class="m-0">Məhsul əlavə et</h3>
+        <h3 class="m-0">Layihəni Yenilə</h3>
         </div>
         <div class="page-header">
             <nav aria-label="breadcrumb">
@@ -25,70 +25,49 @@
         </div>
         <div class="white_card_body">
         <div class="card-body">
-        <form method="POST" enctype="multipart/form-data" action="{{ route('admin.product.store') }}">
+        <form method="POST" enctype="multipart/form-data" action="{{ route('admin.project.update',$project->id) }}">
         @csrf
         <div class="row mb-3">
          <div class="col-md-12">
             <div class="form-group translate">
                 <label for="">Başlıq</label>
-                <input type="hidden" name="title" value='{"az":"","en":""}'>
-                <input name="" class="form-control"></input>
+                <input type="hidden" name="title" value='{{ $project->title }}'>
+                <input name="" value="{{ $project->translate('title') }}" class="form-control">
             </div>
             @error('title')
             <span class="text-danger mt-2">{{ $message }}</span> <br>
             @enderror
          </div>
            </div>
-            <div class="row mb-3">
-                <div class="form-group translate">
-                    <label for="">Qısa Mətn</label>
-                    <input type="hidden" name="short_desc" value='{"az":"","en":""}'>
-                    <textarea name=""    class="form-control"></textarea>
-                </div>
-                @error('short_desc')
-                <span class="text-danger mt-2">{{ $message }}</span> <br>
-                @enderror
-            </div>
        <div class="row mb-3">
         <div class="form-group translate">
             <label for="">Mətn</label>
-            <input type="hidden" name="desc" value='{"az":"","en":""}'>
-            <textarea name=""    class="form-control"></textarea>
+            <input type="hidden" name="desc" value='{{ $project->desc }}'>
+            <textarea name=""    class="form-control">{{ $project->translate('desc') }}</textarea>
         </div>
         @error('desc')
         <span class="text-danger mt-2">{{ $message }}</span> <br>
         @enderror
        </div>
-
         <div class="row mb-3">
 
         <div class="col-md-6">
-            <label for="">Şəkillər</label>
-            <div class="mb-3">
-                <input name="images[]" multiple class="form-control" type="file" id="formFile">
+            <label for="">Şəkil</label>
+            <div>
+                <img src="{{ asset($project->img) }}"  width="100px" alt="">
+
             </div>
-        @error('images')
+            <br>
+            <div class="mb-3">
+                <input name="img" class="form-control" type="file" id="formFile">
+            </div>
+        @error('img')
         <span class="text-danger mt-2">{{ $message }}</span> <br>
         @enderror
         </div>
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="">logo</label>
-
-                    <div class="mb-3">
-                        <input name="logo" class="form-control" type="file" id="formFile">
-                    </div>
-                    @error('logo')
-                    <span class="text-danger mt-2">{{ $message }}</span> <br>
-                    @enderror
-                </div>
-            </div>
-
         </div>
-
-
-        <a href="{{ route('admin.product') }}" class="btn btn-success">Geri</a>
-        <button type="submit" class="btn btn-primary">Əlavə Et</button>
+        <a href="{{ route('admin.project') }}" class="btn btn-success">Geri</a>
+        <button type="submit" class="btn btn-primary">Yenilə</button>
         </form>
         </div>
         </div>

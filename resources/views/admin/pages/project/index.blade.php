@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('title')
-    Products
+    Projects
 @endsection
 @section('content')
 <div class="main_content_iner ">
@@ -13,7 +13,7 @@
         <div class="white_card_header">
         <div class="box_header m-0">
         <div class="main-title">
-        <h3 class="m-0">Məhsullar</h3>
+        <h3 class="m-0">Layihələr</h3>
         </div>
         </div>
         </div>
@@ -23,7 +23,7 @@
         <h4>Table</h4>
 
         <div class="add_button ms-2">
-        <a href="{{ route('admin.product.create') }}"  class="btn_1">Əlavə et</a>
+        <a href="{{ route('admin.project.create') }}"  class="btn_1">Əlavə et</a>
         </div>
         </div>
         </div>
@@ -33,7 +33,7 @@
         <thead>
         <tr>
         <th scope="col">#</th>
-        <th scope="col">logo</th>
+        <th scope="col">Şəkil</th>
         <th scope="col">Baslıq</th>
         <th scope="col">Mətn</th>
         <th scope="col">Prosesler</th>
@@ -42,15 +42,15 @@
         </thead>
         <tbody>
 
-        @foreach ($products as $p)
+        @foreach ($projects as $p)
         <tr>
             <td >{{ $loop->index+1 }}</td>
-            <td><img src="{{ asset($p->logo) }}" style="width:50px" alt=""></td>
+            <td><img src="{{ asset($p->img) }}" style="width:50px" alt=""></td>
             <td>{{ Str::limit($p->translate('title'), 12, '...') }}</td>
             <td>{{ Str::limit($p->translate('desc'), 20, '...') }}</td>
             <td style="font-size: 20px">
-                <a href="{{ route('admin.product.edit',$p->id) }}"><i class="ti-pencil"></i></a>
-                <a  href="{{ route('admin.product.destroy',$p->id) }}"><i class="ti-trash delete"></i></a>
+                <a href="{{ route('admin.project.edit',$p->id) }}"><i class="ti-pencil"></i></a>
+                <a  href="{{ route('admin.project.destroy',$p->id) }}"><i class="ti-trash delete"></i></a>
             </td>
 
             </tr>

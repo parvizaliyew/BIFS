@@ -39,6 +39,16 @@
             @enderror
          </div>
            </div>
+            <div class="row mb-3">
+                <div class="form-group translate">
+                    <label for="">Qısa Mətn</label>
+                    <input type="hidden" name="short_desc" value='{{ $product->short_desc }}'>
+                    <textarea name=""    class="form-control">{{ $product->translate('short_desc') }}</textarea>
+                </div>
+                @error('desc')
+                <span class="text-danger mt-2">{{ $message }}</span> <br>
+                @enderror
+            </div>
        <div class="row mb-3">
         <div class="form-group translate">
             <label for="">Mətn</label>
@@ -50,7 +60,7 @@
         @enderror
        </div>
         <div class="row mb-3">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <label for="">Logo</label>
                 <div>
                     <img src="{{ asset($product->logo) }}"  width="100px" alt="">
@@ -63,20 +73,6 @@
                 <span class="text-danger mt-2">{{ $message }}</span> <br>
                 @enderror
             </div>
-        <div class="col-md-6">
-            <label for="">Şəkil</label>
-            <div>
-                <img src="{{ asset($product->img) }}"  width="100px" alt="">
-
-            </div>
-            <br>
-            <div class="mb-3">
-                <input name="img" class="form-control" type="file" id="formFile">
-            </div>
-        @error('img')
-        <span class="text-danger mt-2">{{ $message }}</span> <br>
-        @enderror
-        </div>
         </div>
             <div class="row mb-3">
 

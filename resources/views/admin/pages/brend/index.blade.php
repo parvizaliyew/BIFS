@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('title')
-    Products
+    Brends
 @endsection
 @section('content')
 <div class="main_content_iner ">
@@ -13,7 +13,7 @@
         <div class="white_card_header">
         <div class="box_header m-0">
         <div class="main-title">
-        <h3 class="m-0">Məhsullar</h3>
+        <h3 class="m-0">Brendlər</h3>
         </div>
         </div>
         </div>
@@ -23,7 +23,7 @@
         <h4>Table</h4>
 
         <div class="add_button ms-2">
-        <a href="{{ route('admin.product.create') }}"  class="btn_1">Əlavə et</a>
+        <a href="{{ route('admin.brend.create') }}"  class="btn_1">Əlavə et</a>
         </div>
         </div>
         </div>
@@ -33,27 +33,22 @@
         <thead>
         <tr>
         <th scope="col">#</th>
-        <th scope="col">logo</th>
-        <th scope="col">Baslıq</th>
-        <th scope="col">Mətn</th>
+        <th scope="col">Şəkil</th>
         <th scope="col">Prosesler</th>
 
         </tr>
         </thead>
         <tbody>
-
-        @foreach ($products as $p)
+            @foreach ($brends as $b)
         <tr>
-            <td >{{ $loop->index+1 }}</td>
-            <td><img src="{{ asset($p->logo) }}" style="width:50px" alt=""></td>
-            <td>{{ Str::limit($p->translate('title'), 12, '...') }}</td>
-            <td>{{ Str::limit($p->translate('desc'), 20, '...') }}</td>
-            <td style="font-size: 20px">
-                <a href="{{ route('admin.product.edit',$p->id) }}"><i class="ti-pencil"></i></a>
-                <a  href="{{ route('admin.product.destroy',$p->id) }}"><i class="ti-trash delete"></i></a>
-            </td>
+        <td >{{ $loop->index+1 }}</td>
+        <td><img src="{{ asset($b->img) }}" style="width:50px" alt=""></td>
+        <td style="font-size: 20px">
+            <a href="{{ route('admin.brend.edit',$b->id) }}"><i class="ti-pencil"></i></a>
+            <a href="{{ route('admin.brend.destroy',$b->id) }}"><i class="ti-trash"></i></a>
+        </td>
 
-            </tr>
+        </tr>
         @endforeach
         </tbody>
         </table>
@@ -67,8 +62,5 @@
         </div>
         </div>
         </div>
-</div>
 
 @endsection
-
-

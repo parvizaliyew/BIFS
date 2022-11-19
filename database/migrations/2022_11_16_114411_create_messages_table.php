@@ -13,15 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('messages', function (Blueprint $table) {
             $table->id();
-            $table->json('slug');
-            $table->json('title');
-            $table->json('desc');
-            $table->json('short_desc');
-            $table->string('images');
-            $table->string('img');
-            $table->string('logo');
+            $table->string('name');
+            $table->string('email');
+            $table->string('title');
+            $table->text('msj');
+            $table->dateTime('seen_message')->nullable();            
             $table->timestamps();
         });
     }
@@ -33,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('messages');
     }
 };

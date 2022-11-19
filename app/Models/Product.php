@@ -15,12 +15,14 @@ class Product extends Model implements ITranslatable
           'desc',
           'slug',
           'img',
-          'images' 
+          'images',
+          'short_desc'
         ];
     protected $casts = [
         'title'=>'array',
         'desc'=>'array',
         'slug'=>'array',
+        'short_desc'=>'array'
     ];
 
     public function translate(string $attr)

@@ -33,7 +33,7 @@ a:active {
 
 html .text-color-primary,
 html .text-primary {
-	color: #E04622 !important;
+	color: #6AB341 !important;
 }
 
 html .text-color-hover-primary:hover,
@@ -436,7 +436,7 @@ html .svg-stroke-color-hover-light svg:hover polygon {
 
 html .bg-color-primary,
 html .bg-primary {
-	background-color: #E04622 !important;
+	background-color: #3A6229 !important;
 }
 
 html .bg-color-hover-primary:hover,
@@ -7406,7 +7406,7 @@ ul.comments .comment-block,
 * Header
 */
 html #header .header-logo.custom-header-logo:before {
-	background-color: #E04622;
+	background-color: #6AB341;
 }
 /*
 * Sticky Sidebar

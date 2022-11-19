@@ -25,7 +25,7 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(),[
             'title'=>'required',
             'desc'=>'required',
-            'img'=>'required|mimes:jpg,png,svg,webp',
+            'short_desc'=>'required',
             'logo'=>'required|mimes:jpg,png,svg,webp',
             'images'=>'required|array',
             'images.*'=>'required|image|mimes:jpg,png,svg,jpeg',
@@ -33,9 +33,8 @@ class ProductController extends Controller
         [
             'title.required'=>'Baslığı  daxil edin',
             'desc.required'=>'Mətni  daxil edin',
-            'img.required'=>'Şəkili daxil edin',
+            'short_desc.required'=>'Qısa Mətni  daxil edin',
             'logo.required'=>'logonu  daxil edin',
-            'img.mimes'=>'Şəkil png , jpg , svg , webp formatinda olmalidi',
             'images.required'=>'Şəkillər daxil edin',
 
         ]);
@@ -45,17 +44,6 @@ class ProductController extends Controller
             return redirect()->back()->withErrors($validator);
         }
         $product=new Product();
-
-
-        if($request->has('img'))
-        {
-            $ext=$request->img->extension();
-            $fileName=rand(1,100).time().'.'.$ext;
-            $fileNameWithUpload='storage/products/'.$fileName;
-
-            $request->img->storeAs('public/products/',$fileName);
-            $product->img=$fileNameWithUpload;
-        }
 
         if($request->has('logo'))
         {
@@ -82,10 +70,10 @@ class ProductController extends Controller
          $data['slug'][$key] = Str::slug($title);
      }
 
-     $product->img=$fileNameWithUpload;
      $product->images=implode('|',$images);
      $product->title=$request->title;
      $product->desc=$request->desc;
+     $product->short_desc=$request->short_desc;
      $product->slug=$data['slug'];
      $product->save();
 
@@ -103,7 +91,6 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(),[
             'title'=>'required',
             'desc'=>'required',
-            'img'=>'mimes:jpg,png,svg,webp',
             'logo'=>'mimes:jpg,png,svg,webp',
             'images'=>'array',
             'images.*'=>'image|mimes:jpg,png,svg,jpeg',
@@ -111,8 +98,6 @@ class ProductController extends Controller
             [
                 'title.required'=>'Baslığı  daxil edin',
                 'desc.required'=>'Mətni  daxil edin',
-                'img.required'=>'Şəkili daxil edin',
-                'img.mimes'=>'Şəkil png , jpg , svg , webp formatinda olmalidi',
                 'images.required'=>'Şəkillər daxil edin',
             ]);
 
@@ -122,18 +107,6 @@ class ProductController extends Controller
         }
         $product=Product::findOrFail($id);
 
-        if($request->has('img'))
-        {
-            $ext=$request->img->extension();
-            $fileName=rand(1,100).time().'.'.$ext;
-            $fileNameWithUpload='storage/products/'.$fileName;
-            if(File::exists($product->img))
-            {
-                File::delete($product->img);
-            }
-            $request->img->storeAs('public/products/',$fileName);
-            $product->img=$fileNameWithUpload;
-        }
         if($request->has('logo'))
         {
             $ext=$request->logo->extension();
@@ -172,6 +145,7 @@ if ($request->has('images'))
 
         $product->title=$request->title;
         $product->desc=$request->desc;
+        $product->short_desc=$request->short_desc;
         $product->slug=$data['slug'];
         $product->save();
 
@@ -182,10 +156,6 @@ if ($request->has('images'))
     {
         $product=Product::findOrFail($id);
 
-        if(File::exists($product->img))
-            {
-                File::delete($product->img);
-            }
         if(File::exists($product->images))
             {
                 File::delete($product->images);
