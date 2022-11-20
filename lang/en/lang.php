@@ -41,5 +41,9 @@ return
     'partnyorlarimiz'=>'PARTNYORLARIMIZIN SAYI',
     'mehsul_cesidi'=>'MƏHSUL ÇEŞİDİ',
 
+    //Projects
+    'layiheler'=>'Projects',
+
+
 
 ];

@@ -37,6 +37,12 @@ class FrontController extends Controller
         $product=Product::whereJsonContains('slug->az',$slug)->orWhereJsonContains('slug->en',$slug)->first();
         return view('front.product-details',compact('product'));
     }
+
+    public function project()
+    {
+        $projects=Project::orderBy('id','DESC')->get();
+        return view('front.project',compact('projects'));
+    }
     public function contact()
     {
         $contact=Setting::first();

@@ -109,3 +109,6 @@ Route::get('/en/contact',[FrontController::class,'contact'])->name('contact.en')
 
 Route::post('/elaqe',[FrontController::class,'contact_post'])->name('contact_post.az');
 Route::post('/en/contact',[FrontController::class,'contact_post'])->name('contact_post.en');
+
+Route::get('/layiheler',[FrontController::class,'project'])->name('project.az');
+Route::get('/en/projects',[FrontController::class,'project'])->name('project.en');

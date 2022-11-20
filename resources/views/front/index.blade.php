@@ -1,9 +1,6 @@
 @extends('front.layouts.master')
 
-@section('css')
 
-    
-@endsection
 @section('lang')
     <div class="lang">
         <a href="{{ route(str_replace(app()->getLocale(), 'az', $current)) }}">AZ</a>
@@ -234,38 +231,38 @@
         </div>
     </div>
 
-    <div class="container mt-5 pt-4 mb-5 mb-lg-4 mb-xl-0 pb-3 pb-xl-0">
-        <div class="row">
-            <div class="col">
-                <h2 class="text-color-dark font-weight-bold text-7 line-height-1 mb-3-5 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="200">{{ __('lang.projects') }}</h2>
-                <p class="text-4 font-weight-light mb-5-5 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="400">{{ __('lang.projects_desc') }} </p>
+        <div class="container mt-5 pt-4 mb-5 mb-lg-4 mb-xl-0 pb-3 pb-xl-0">
+            <div class="row">
+                <div class="col">
+                    <h2 class="text-color-dark font-weight-bold text-7 line-height-1 mb-3-5 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="200">{{ __('lang.projects') }}</h2>
+                    <p class="text-4 font-weight-light mb-5-5 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="400">{{ __('lang.projects_desc') }} </p>
+                </div>
+            </div>
+            <div class="row row-gutter-sm justify-content-center mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600">
+                @foreach($projects as $pro)
+                    <div class="col-sm-9 col-md-6 col-lg-4">
+                        <a href="" class="text-decoration-none" data-cursor-effect-hover="plus">
+                            <div class="card border-0">
+                                <div class="card-img-top position-relative overlay">
+                                    <div class="position-absolute bottom-10 right-0 d-flex justify-content-end w-100 py-3 px-4 z-index-3">
+                                    
+                                    </div>
+                                    <img src="{{ asset($pro->img) }}" class="img-fluid" alt="Lorem Ipsum Dolor" />
+                                </div>
+                                <div class="card-body py-4 px-0">
+                                    <h3 class="text-transform-none font-weight-bold text-5 text-color-hover-primary mb-2">{{ $pro->translate('title') }}</h3>
+                                    <span class="custom-view-more d-inline-flex font-weight-medium text-color-primary">
+                                    {{ __('lang.etrafli') }}
+                                    <img width="27" height="27" src="{{ asset('front') }}/img/demos/construction/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}" style="width: 27px;" />
+                                </span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                @endforeach
             </div>
         </div>
-        <div class="row row-gutter-sm justify-content-center mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600">
-            @foreach($projects as $pro)
-                <div class="col-sm-9 col-md-6 col-lg-4">
-                    <a href="" class="text-decoration-none" data-cursor-effect-hover="plus">
-                        <div class="card border-0">
-                            <div class="card-img-top position-relative overlay">
-                                <div class="position-absolute bottom-10 right-0 d-flex justify-content-end w-100 py-3 px-4 z-index-3">
-                                
-                                </div>
-                                <img src="{{ asset($pro->img) }}" class="img-fluid" alt="Lorem Ipsum Dolor" />
-                            </div>
-                            <div class="card-body py-4 px-0">
-                                <h3 class="text-transform-none font-weight-bold text-5 text-color-hover-primary mb-2">{{ $pro->translate('title') }}</h3>
-                                <span class="custom-view-more d-inline-flex font-weight-medium text-color-primary">
-                                {{ __('lang.etrafli') }}
-                                <img width="27" height="27" src="{{ asset('front') }}/img/demos/construction/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}" style="width: 27px;" />
-                            </span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-            @endforeach
-        </div>
-    </div>
 
     <div class="position-relative pb-5 d-sm-none d-xl-block">
         <div class="position-absolute transform3dy-n50 left-0">
@@ -278,45 +275,7 @@
 </div>
 
     @push('css')
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
-        />
-
-        <!-- Demo styles -->
-        <style>
-            .swiper {
-                width: 100%;
-                height: 100%;
-            }
-
-            .swiper-slide {
-                text-align: center;
-                font-size: 18px;
-                background: #fff;
-
-                /* Center slide text vertically */
-                display: -webkit-box;
-                display: -ms-flexbox;
-                display: -webkit-flex;
-                display: flex;
-                -webkit-box-pack: center;
-                -ms-flex-pack: center;
-                -webkit-justify-content: center;
-                justify-content: center;
-                -webkit-box-align: center;
-                -ms-flex-align: center;
-                -webkit-align-items: center;
-                align-items: center;
-            }
-
-            .swiper-slide img {
-                display: block;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        </style>
+        <link   rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
     @endpush
 
     @push('js')

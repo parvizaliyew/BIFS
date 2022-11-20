@@ -4,7 +4,7 @@
 					<div class="row pt-4 mb-5 gy-4">
 						<div class="col-lg-2 align-self-center">
 							<a href="demo-construction.html">
-								<img alt="Porto" class="img-fluid logo" width="123" height="48" src="{{ asset('front') }}/img/BIFS-logo-Footer.png">
+								<img alt="Porto" class="img-fluid logo-footer" width="123" height="48" src="{{ asset('front') }}/img/BIFS-logo-Footer.png">
 							</a>
 						</div>
 						<div class="col-lg-4 offset-lg-1">
@@ -26,8 +26,8 @@
 									</a>
 								</li>
 								<li>
-									<a href="demo-construction-projects.html" class="text-color-hover-primary">
-										Projects
+									<a href="{{ route('project.'.app()->getLocale()) }}" class="text-color-hover-primary">
+										{{ __('lang.layiheler') }}
 									</a>
 								</li>
 								<li>
@@ -73,7 +73,7 @@
 
 					<hr>
 
-					<div class="footer-copyright bg-transparent pb-5 mt-5-5">
+					<div class="footer-copyright bg-transparent footer pb-5 mt-5-5">
 						<div class="row pb-5">
 							<div class="col text-center mb-5">
 								<p class="text-color-grey text-3 mb-3">Porto Construction © 2022. All Rights Reserved. </p>
@@ -116,6 +116,7 @@
 
 		<!-- Theme Initialization Files -->
 		<script src="{{ asset('front') }}/js/theme.init.js"></script>
+
 
             @stack('js')
 	</body>

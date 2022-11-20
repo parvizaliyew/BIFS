@@ -21,7 +21,6 @@ return
 
     //Elaqe
     'elaqe'=>'Əlaqə',
-
     'Bizimle_elaqe' =>'Bizimlə əlaqə saxlayın.',
     'ad'            =>'Adınız',
     'basliq'         =>'Baslığ',
@@ -35,9 +34,13 @@ return
     'mesaj_required'=>'Zəhmət olmasa mesajınızı daxil edin',
     'gonder'=>'Gönder',
 
-        //counter
-        'tecrubemiz'=>'BU SAHƏDƏ TƏCRÜBƏMİZ',
-        'layihelerin_sayi'=>'LAYİHƏLƏRİMİZİN SAYI',
-        'partnyorlarimiz'=>'PARTNYORLARIMIZIN SAYI',
-        'mehsul_cesidi'=>'MƏHSUL ÇEŞİDİ',
+    //counter
+    'tecrubemiz'=>'BU SAHƏDƏ TƏCRÜBƏMİZ',
+    'layihelerin_sayi'=>'LAYİHƏLƏRİMİZİN SAYI',
+    'partnyorlarimiz'=>'PARTNYORLARIMIZIN SAYI',
+    'mehsul_cesidi'=>'MƏHSUL ÇEŞİDİ',
+
+    //Projects
+    'layiheler'=>'Layihələr',
+    
 ];

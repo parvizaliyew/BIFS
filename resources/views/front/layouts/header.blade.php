@@ -48,6 +48,8 @@
 
     <!-- Skin CSS -->
     <link id="skinCSS" rel="stylesheet" href="{{ asset('front') }}/css/skins/skin-construction.css">
+    
+    <link rel="stylesheet" href="{{ asset('front') }}/css/mycss.css">
 
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
@@ -55,49 +57,10 @@
 
     <!-- Head Libs -->
     <script src="{{ asset('front') }}/vendor/modernizr/modernizr.min.js"></script>
-    <style>
-        .diamonds-wrapper .diamonds li:nth-child(4) img,
-        .diamonds-wrapper .diamonds li:nth-child(6) img,
-        .diamonds-wrapper .diamonds li:nth-child(7) img {
-            width: 180px !important;
-            height: 180px !important;
-            object-fit: cover;
-            max-width: 180px;
-            max-height: 180px;
-        }
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
-        .diamonds-wrapper .diamonds li:nth-child(4) a,
-        .diamonds-wrapper .diamonds li:nth-child(6) a,
-        .diamonds-wrapper .diamonds li:nth-child(7) a {
-            width: 180px !important;
-            height: 180px !important;
-            display: flex
-        }
+    <script src="{{ asset('front') }}/js/myjs.js"></script>
 
-        .mySwiper1 img {
-            max-width: 250px !important;
-        }
-
-        .img-item {
-            width: 100%;
-            object-fit: cover;
-        }
-
-        .img-div:not(:nth-child(4n)) {
-            margin-right: 20px
-        }
-
-        .img-div {
-            max-width: 23%;
-            margin-bottom: 20px;
-        }
-
-        .img-block {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap
-        }
-    </style>
 </head>
 
 <body data-plugin-scroll-spy data-plugin-options="{'target': '#sidebar'}">
@@ -145,15 +108,11 @@
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a class="nav-link" href="demo-construction-projects.html">
-                                                        Projects
+                                                    <a class="nav-link" href="{{ route('project.'.app()->getLocale()) }}">
+                                                        {{ __('lang.layiheler') }}
                                                     </a>
                                                 </li>
-                                                <li>
-                                                    <a class="nav-link" href="demo-construction-blog.html">
-                                                        Blog
-                                                    </a>
-                                                </li>
+                                              
                                                 <li>
                                                     <a class="nav-link"
                                                         href="{{ route('contact.' . app()->getLocale()) }}">

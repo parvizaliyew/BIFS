@@ -1,6 +1,6 @@
 <nav class="sidebar dark_sidebar vertical-scroll  ps-container ps-theme-default ps-active-y">
     <div class="logo d-flex justify-content-between">
-    <a href="{{ route('admin.index') }}"><img src="{{asset('manager/')}}/img/logo_white.png" alt=""></a>
+    <a href="{{ route('admin.index') }}"><img src="{{asset('front/')}}/img/BIFS-logo-Header.png" alt=""></a>
     <div class="sidebar_close_icon d-lg-none">
     <i class="ti-close"></i>
     </div>
