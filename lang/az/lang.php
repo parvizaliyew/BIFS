@@ -10,6 +10,7 @@ return
     //Brendler
     'brendler'=>'Brendlər',
     'brendler_desc'=>'Cras a elit sit amet leo accumsan volutsudisse. AZ',
+    'brendler_desc_2'=>'Cras a elit sit amet leo accumsan volutpat. Suspendisse hendrerit vehicula leo, vel efficitur felis vehicula leo, vel efficitur felis ultrices non.',
 
     //Projects
     'projects'=>'Layihələr',
@@ -43,4 +44,15 @@ return
     //Projects
     'layiheler'=>'Layihələr',
     
+    //haqqimizda
+    'haqqimizda'=>'Haqqımızda',
+    'biz_kimik'=>'Biz kimik',
+    'about_text_1'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum ultricies nunc, eu interdum enim convallis pretium. Quisque eu neque augue. Aliquam egestas nunc at efficitur faucibus. Praesent mauris eros, tincidunt id enim sodales, rhoncus malesuada ligula.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum ultricies nunc, eu interdum enim convallis pretium. Quisque eu neque augue. Aliquam egestas nunc at efficitur faucibus. Praesent mauris eros, tincidunt id enim sodales, rhoncus malesuada ligula.',
+    'about_text_2'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum ultricies nunc, eu interdum enim convallis pretium. Quisque eu neque augue. Aliquam egestas nunc at efficitur faucibus. Praesent mauris eros, tincidunt id enim sodales, rhoncus malesuada ligula.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum ultricies nunc, eu interdum enim convallis pretium. Quisque eu neque augue. Aliquam egestas nunc at efficitur faucibus. Praesent mauris eros, tincidunt id enim sodales, rhoncus malesuada ligula.',
+
+
+    
+    'footer_desc'=>'Porto Construction © 2022. All Rights Reserved. '
 ];

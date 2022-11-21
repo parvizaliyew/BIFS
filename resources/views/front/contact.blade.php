@@ -122,8 +122,8 @@
                 </form>
             </div>
             <div class="col-lg-6 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="1800">
-                <h2 class="font-weight-bold text-color-dark text-6 mb-0">Corporate Headquarters</h2>
-                <p class="text-3-5 font-weight-light mb-5-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                {{-- <h2 class="font-weight-bold text-color-dark text-6 mb-0">Corporate Headquarters</h2> --}}
+                {{-- <p class="text-3-5 font-weight-light mb-5-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p> --}}
                 <div id="googlemaps" class="google-map m-0" style="min-height: 450px;"></div>
             </div>
         </div>

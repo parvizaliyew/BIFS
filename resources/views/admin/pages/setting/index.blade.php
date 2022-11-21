@@ -72,7 +72,7 @@
             </div>
         </div>
         
-      <div class="mb-3">
+      <div class="row mb-3">
         <div class="col-md-6">
             <label class="form-label" for="ins"> Instagram </label>
             <input type="text" name="ins" value="{{ $setting->ins }}" class="form-control" id="ins" placeholder="instagram">
@@ -80,6 +80,14 @@
             <span class="text-danger mt-2">{{ $message }}</span> <br>
             @enderror
             </div>
+
+            <div class="col-md-6">
+                <label class="form-label" for="wp"> WhatsApp </label>
+                <input type="text" name="wp" value="{{ $setting->wp }}" class="form-control" id="wp" placeholder="WhatsApp">
+                @error('wp')
+                <span class="text-danger mt-2">{{ $message }}</span> <br>
+                @enderror
+                </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Yenilə</button>

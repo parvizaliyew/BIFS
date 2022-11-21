@@ -76,7 +76,7 @@
                                 <div class="header-logo custom-header-logo">
                                     <img class="logo" alt="Porto" width="123" height="48"
                                         src="{{ asset('front') }}/img/BIFS-logo-Header.png">
-                                    <a href="demo-construction.html">
+                                    <a href="{{ route('index.'.app()->getLocale()) }}">
                                         <img class="logo-sticky" alt="Porto" width="123" height="48"
                                             src="{{ asset('front') }}/img/BIFS-logo-Footer.png">
                                     </a>
@@ -91,30 +91,30 @@
                                         <nav class="collapse px-3-5">
                                             <ul class="nav nav-pills" id="mainNav">
                                                 <li>
-                                                    <a class="nav-link active"
+                                                    <a class="nav-link {{ Route::is('index.'.app()->getLocale()) ? 'active' : ' ' }}"
                                                         href="{{ route('index.' . app()->getLocale()) }}">
                                                         {{ __('lang.esas_sehife') }}
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a class="nav-link" href="demo-construction-company.html">
-                                                        Company
+                                                    <a class="nav-link {{ Route::is('about.'.app()->getLocale()) ? 'active' : ' ' }}" href="{{ route('about.'.app()->getLocale()) }}">
+                                                        {{ __('lang.haqqimizda') }}
                                                     </a>
                                                 </li>
-                                                <li class="dropdown">
-                                                    <a class="nav-link dropdown-toggle"
+                                                <li >
+                                                    <a class="nav-link {{ Route::is('product.'.app()->getLocale()) ? 'active' : ' ' }}"
                                                         href="{{ route('product.' . app()->getLocale()) }}">
                                                         {{ __('lang.mehsullar') }}
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a class="nav-link" href="{{ route('project.'.app()->getLocale()) }}">
+                                                    <a class="nav-link {{ Route::is('project.'.app()->getLocale()) ? 'active' : ' ' }}" href="{{ route('project.'.app()->getLocale()) }}">
                                                         {{ __('lang.layiheler') }}
                                                     </a>
                                                 </li>
                                               
                                                 <li>
-                                                    <a class="nav-link"
+                                                    <a class="nav-link {{ Route::is('contact.'.app()->getLocale()) ? 'active' : ' ' }}"
                                                         href="{{ route('contact.' . app()->getLocale()) }}">
                                                         {{ __('lang.elaqe') }}
                                                     </a>

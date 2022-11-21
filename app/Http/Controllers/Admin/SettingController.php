@@ -23,7 +23,9 @@ class SettingController extends Controller
             'phone_2'=>'required',
             'adress'=>'required',
             'fb'=>'required',
-            'ins'=>'required'
+            'ins'=>'required',
+            'wp'=>'required'
+
 
         ],
         [
@@ -33,6 +35,7 @@ class SettingController extends Controller
             'email.email'=>'Email düzgün formatda deyil',
             'fb.required'=>'Facebooku daxil edin',
             'ins.required'=>'İnstagramı daxil edin',
+            'wp.required'=>'WhatsApp ı  daxil edin',
             'adress.required'=>'Ünvanı daxil edin',
 
 
@@ -49,6 +52,8 @@ class SettingController extends Controller
 
         $setting->fb=$request->fb;
         $setting->ins=$request->ins;
+        $setting->wp=$request->wp;
+
         $setting->adress=$request->adress;
         $setting->save();
 

@@ -43,15 +43,17 @@
                     @foreach ($products as $p)
                     <div class="col-6 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="1400">
                         <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start">
-                            <img class="flex-0-0-auto" width="85" height="85" src="{{ asset($p->logo) }}" alt=""  />
-                            <div class="text-center text-sm-start">
-                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5-5 mb-3-5">{{ $p->translate('title') }}</h3>
-                                <p class="font-weight-light text-3-5 mb-4-5">{{ $p->translate('short_desc') }} </p>
-                                <a href="{{ route('product_details.'.app()->getLocale(),$p->slug[app()->getLocale()]) }}" class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
-                                    {{ __('lang.etrafli') }}
-                                    <img width="27" height="27" src="img/demos/construction/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}" />
-                                </a>
-                            </div>
+                            <a class="product_link" href="{{ route('product_details.'.app()->getLocale(),$p->slug[app()->getLocale()]) }}">
+                                <img class="flex-0-0-auto" width="85" height="85" src="{{ asset($p->logo) }}" alt=""  />
+                                <div class="text-center text-sm-start">
+                                    <h3 class="text-color-dark font-weight-bold text-transform-none text-5-5 mb-3-5">{{ $p->translate('title') }}</h3>
+                                    <p class="font-weight-light text-3-5 mb-4-5 product_height">{{ $p->translate('short_desc') }} </p>
+                                    <a href="{{ route('product_details.'.app()->getLocale(),$p->slug[app()->getLocale()]) }}" class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
+                                        {{ __('lang.etrafli') }}
+                                        <img width="27" height="27" src="{{ asset('front/') }}/img/demos/construction/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}" />
+                                    </a>
+                                </div>
+                            </a>
                         </div>
                     </div>
                     @endforeach

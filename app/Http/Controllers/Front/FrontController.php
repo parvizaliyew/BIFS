@@ -49,6 +49,11 @@ class FrontController extends Controller
         return view('front.contact',compact('contact'));
     }
 
+    public function about()
+    {
+        $counter=Counter::first();
+        return view('front.about',compact('counter'));
+    }
     public function contact_post(Request $request)
     {
         $validator = Validator::make($request->all(),[

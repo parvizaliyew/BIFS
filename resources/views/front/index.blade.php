@@ -95,9 +95,9 @@
                     <line stroke="#FFF" stroke-dasharray="8" stroke-width="2" x1="14.75" y1="132.9" x2="133.81" y2="12.05" class="appear-animation" data-appear-animation="customLineDividerAnim" data-appear-animation-delay="2400" data-appear-animation-duration="2.2s" />
                 </svg>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 text-sm-start">
                 <p class="font-weight-medium text-3-5 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="3200">{{ __('lang.desc_right') }} </p>
-                <a href="demo-construction-company.html" class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="3400">
+                <a href="{{ route('about.'.app()->getLocale()) }}" class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="3400">
                     {{ __('lang.etrafli') }}
                     <img width="27" height="27" src="{{ asset('front') }}/img/demos/construction/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}" />
                 </a>
@@ -115,17 +115,21 @@
             </div>
             <div class="row">
                 @foreach ($products as $prod)
-                        <div class="col-md-6 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="1150">
+                        <div class="col-md-6 appear-animation product_more" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="1150">
                     <div class="d-flex">
+                        <a class="product_link" href="{{ route('product_details.'.app()->getLocale(),$prod->slug[app()->getLocale()]) }}">
+
                         <img class="flex-0-0-auto" width="60" height="60" src="{{ asset($prod->logo) }}" alt="" />
-                        <div class="ps-4">
+                        <div class="ps-4 text-sm-start">
                             <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">{{ $prod->translate('title') }}</h3>
-                            <p class="font-weight-light text-3-5 mb-3-5">{{ $prod->translate('short_desc') }} </p>
-                            <a href="demo-construction-services-detail.html" class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
+                            <p class="font-weight-light text-3-5 mb-3-5 product_height">{{ $prod->translate('short_desc') }} </p>
+                            <a href="{{ route('product_details.'.app()->getLocale(),$prod->slug[app()->getLocale()]) }}" class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                 {{ __('lang.etrafli') }}
                                 <img width="27" height="27" src="{{ asset('front') }}/img/demos/construction/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}" />
                             </a>
                         </div>
+                    </a>
+
                     </div>
                 </div>
                 @endforeach
@@ -164,15 +168,15 @@
         </div>
         <div class="row">
             <div class="col-md-8 col-lg-6">
-                <p class="text-3-5 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="600">Cras a elit sit amet leo accumsan volutpat. Suspendisse hendrerit vehicula leo, vel efficitur felis <span class="highlight highlight-primary highlight-bg-opacity highlight-animated" data-appear-animation="highlight-animated-start" data-appear-animation-delay="1100" data-plugin-options="{'flagClassOnly': true}">ultrices non hendrerit</span> vehicula leo, vel efficitur felis ultrices non.</p>
-                <a href="demo-construction-projects.html" class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-4 btn-py-2 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="800">
-                    View Projects
+                <p class="text-3-5 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="600">{{ __('lang.brendler_desc_2') }}.</p>
+                <a href="{{ route('about.'.app()->getLocale()) }}" class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-4 btn-py-2 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="800">
+                    {{ __('lang.etrafli') }}
                     <img width="27" height="27" src="{{ asset('front') }}/img/demos/construction/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light ms-2'}" />
                 </a>
             </div>
         </div>
     </div>
-    <section style="position: relative;overflow: hidden;height: 680px;max-height: 300px;display: flex;align-items: center;" class="section parallax border-0 pt-5 py-0 m-0" data-plugin-parallax data-plugin-options="{'spped': '1.5', 'parallaxHeight': '125%', 'fadeIn': true}" data-image-src="{{ asset('front') }}/img/background-img.jpg">
+    <section style="position: relative;overflow: hidden;height: 680px;max-height: 500px;background-attachment:fixed;display: flex;align-items: center;" class="section parallax border-0 pt-5 py-0 m-0" data-plugin-parallax data-plugin-options="{'spped': '1.5', 'parallaxHeight': '125%', 'fadeIn': true}" data-image-src="{{ asset('front') }}/img/background-img.jpg">
         <div class="container">
             <div class="row gy-5">
                 
@@ -238,7 +242,7 @@
                     <p class="text-4 font-weight-light mb-5-5 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="400">{{ __('lang.projects_desc') }} </p>
                 </div>
             </div>
-            <div class="row row-gutter-sm justify-content-center mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600">
+            <div class="row row-gutter-sm justify-content-center mb-5 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600">
                 @foreach($projects as $pro)
                     <div class="col-sm-9 col-md-6 col-lg-4">
                         <a href="" class="text-decoration-none" data-cursor-effect-hover="plus">
@@ -249,7 +253,7 @@
                                     </div>
                                     <img src="{{ asset($pro->img) }}" class="img-fluid" alt="Lorem Ipsum Dolor" />
                                 </div>
-                                <div class="card-body py-4 px-0">
+                                <div class="card-body py-4 px-0 text-sm-start">
                                     <h3 class="text-transform-none font-weight-bold text-5 text-color-hover-primary mb-2">{{ $pro->translate('title') }}</h3>
                                     <span class="custom-view-more d-inline-flex font-weight-medium text-color-primary">
                                     {{ __('lang.etrafli') }}
@@ -276,6 +280,40 @@
 
     @push('css')
         <link   rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+        
+        <style>
+            .swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+        </style>
     @endpush
 
     @push('js')

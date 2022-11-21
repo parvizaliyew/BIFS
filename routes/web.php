@@ -112,3 +112,6 @@ Route::post('/en/contact',[FrontController::class,'contact_post'])->name('contac
 
 Route::get('/layiheler',[FrontController::class,'project'])->name('project.az');
 Route::get('/en/projects',[FrontController::class,'project'])->name('project.en');
+
+Route::get('/haqqimizda',[FrontController::class,'about'])->name('about.az');
+Route::get('/en/about',[FrontController::class,'about'])->name('about.en');

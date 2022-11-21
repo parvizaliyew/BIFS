@@ -23,8 +23,8 @@
             <div class="row justify-content-end pt-1 mt-lg-5">
                 <div class="col-7 col-md-5 position-relative">
                     <ul class="breadcrumb d-block ps-2 appear-animation" data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="200">
-                        <li><a href="demo-construction.html">{{ route('index.'.app()->getLocale()) }}</a></li>
-                        <li class="active">Projects</li>
+                        <li><a href="{{ route('index.'.app()->getLocale()) }}">{{ __('lang.esas_sehife') }}</a></li>
+                        <li class="active">{{ __('lang.layiheler') }}</li>
                     </ul>
                     <h1 class="position-absolute top-100 left-0 text-color-light font-weight-bold text-6 line-height-3 text-end mt-5-5">
                         <span class="d-block position-relative z-index-1 pb-5 ps-lg-3 appear-animation" data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="800">Projects</span>
@@ -45,7 +45,7 @@
                 <p class="text-4 font-weight-light mb-5-5 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="400">{{ __('lang.projects_desc') }} </p>
             </div>
         </div>
-        <div class="row row-gutter-sm justify-content-center mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600">
+        <div class="row row-gutter-sm  mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600">
             @foreach($projects as $pro)
                 <div class="col-sm-9 col-md-6 col-lg-4">
                     <a href="" class="text-decoration-none" data-cursor-effect-hover="plus">
