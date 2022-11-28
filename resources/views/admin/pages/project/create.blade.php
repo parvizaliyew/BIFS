@@ -60,6 +60,16 @@
         <span class="text-danger mt-2">{{ $message }}</span> <br>
         @enderror
         </div>
+        <div class="col-md-6">
+            <label for="">Şəkillər</label>
+
+            <div class="mb-3">
+                <input name="images[]" multiple class="form-control" type="file" id="formFile">
+            </div>
+        @error('images')
+        <span class="text-danger mt-2">{{ $message }}</span> <br>
+        @enderror
+        </div>
         </div>
         <a href="{{ route('admin.project') }}" class="btn btn-success">Geri</a>
         <button type="submit" class="btn btn-primary">Əlavə Et</button>

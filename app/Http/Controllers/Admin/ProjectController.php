@@ -26,12 +26,15 @@ class ProjectController extends Controller
             'title'=>'required',
             'desc'=>'required',
             'img'=>'required|mimes:jpg,png,svg,webp',
+            'images'=>'required|array',
+            'images.*'=>'required|image|mimes:jpg,png,svg,jpeg',
         ],
             [
                 'title.required'=>'Baslığı  daxil edin',
                 'desc.required'=>'Mətni  daxil edin',
                 'img.required'=>'Şəkili daxil edin',
                 'img.mimes'=>'Şəkil png , jpg , svg , webp formatinda olmalidi',
+                'images.required'=>'Şəkillər daxil edin',
             ]);
 
 
@@ -51,11 +54,22 @@ class ProjectController extends Controller
             $project->img=$fileNameWithUpload;
         }
 
+        $images=[];
+        foreach($request->images as $file )
+        {
+            $ext=$file->extension();
+            $fileName=rand(1,100).time().'.'.$ext;
+            $fileNameWithUpload='storage/projects/'.$fileName;
+            $file->storeAs('public/projects/',$fileName);
+            $images[]=$fileNameWithUpload;
+        }
+
         $data['slug'] = [];
         foreach (json_decode($request->title) as $key => $title) {
             $data['slug'][$key] = Str::slug($title);
         }
 
+        $project->images=implode('|',$images);
         $project->title=$request->title;
         $project->desc=$request->desc;
         $project->slug=$data['slug'];
@@ -76,17 +90,21 @@ class ProjectController extends Controller
             'title'=>'required',
             'desc'=>'required',
             'img'=>'mimes:jpg,png,svg,webp',
+            'images'=>'array',
+            'images.*'=>'image|mimes:jpg,png,svg,jpeg',
         ],
-            [
-                'title.required'=>'Baslığı  daxil edin',
-                'desc.required'=>'Mətni  daxil edin',
-                'img.mimes'=>'Şəkil png , jpg , svg , webp formatinda olmalidi',
+        [
+            'title.required'=>'Baslığı  daxil edin',
+            'desc.required'=>'Mətni  daxil edin',
+            'img.mimes'=>'Şəkil png , jpg , svg , webp formatinda olmalidi',
+                'images.required'=>'Şəkillər daxil edin',
             ]);
-
-
-        if ($validator->fails()) {
+            
+            
+            if ($validator->fails()) {
             return redirect()->back()->withErrors($validator);
         }
+        $image_ids = $request->image_ids;
         $project=Project::findOrFail($id);
 
         if($request->has('img'))
@@ -101,6 +119,28 @@ class ProjectController extends Controller
             $request->img->storeAs('public/projects/',$fileName);
             $project->img=$fileNameWithUpload;
         }
+
+
+
+        if ($request->has('images'))
+{
+        $images=[];
+        foreach($request->images as $file )
+        {
+            $ext=$file->extension();
+            $fileName=rand(1,100).time().'.'.$ext;
+            $fileNameWithUpload='storage/projects/'.$fileName;
+            $file->storeAs('public/project/',$fileName);
+            if(File::exists($project->images))
+            {
+                File::delete($project->images);
+            }
+            $images[]=$fileNameWithUpload;
+
+        }
+    $project->images=implode('|',$images);
+
+}
 
 
         $data['slug'] = [];

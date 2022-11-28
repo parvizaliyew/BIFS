@@ -245,7 +245,7 @@
             <div class="row row-gutter-sm justify-content-center mb-5 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600">
                 @foreach($projects as $pro)
                     <div class="col-sm-9 col-md-6 col-lg-4">
-                        <a href="" class="text-decoration-none" data-cursor-effect-hover="plus">
+                        <a href="{{ route('project_details.'.app()->getLocale(),$pro->slug[app()->getLocale()]) }}" class="text-decoration-none" data-cursor-effect-hover="plus">
                             <div class="card border-0">
                                 <div class="card-img-top position-relative overlay">
                                     <div class="position-absolute bottom-10 right-0 d-flex justify-content-end w-100 py-3 px-4 z-index-3">

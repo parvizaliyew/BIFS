@@ -155,8 +155,8 @@ if ($request->has('images'))
     public function destroy($id)
     {
         $product=Product::findOrFail($id);
-
-        if(File::exists($product->images))
+        try {
+            if(File::exists($product->images))
             {
                 File::delete($product->images);
             }
@@ -165,7 +165,15 @@ if ($request->has('images'))
             File::delete($product->logo);
         }
         $product->delete();
-        toastr()->success('Məhsulunuz uğurla silindi');
-        return redirect()->route('admin.product');
+        return response()->json([
+            'message' => 'Staff successfully deleted',
+            'code' => 204,
+        ]);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'message' => 'Something went wrong',
+                'code' => 500,
+            ]);}
+        
     }
 }

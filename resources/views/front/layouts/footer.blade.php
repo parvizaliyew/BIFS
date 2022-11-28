@@ -42,7 +42,7 @@
 							<ul class="list list-unstyled list-inline">
 								<li class="list-inline-item d-inline-flex align-items-center">
 									<img width="23" height="23" src="{{ asset('front') }}/img/demos/construction/icons/phone.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-dark'}" />
-									<a href="tel:0123456789" class="text-decoration-none text-color-dark text-color-hover-primary font-weight-bold text-3-5 ms-2">(800) 123-4567</a>
+									<a href="tel:0123456789" class="text-decoration-none text-color-dark text-color-hover-primary font-weight-bold text-3-5 ms-2">{{ $setting->phone_1 }}</a>
 								</li>
 								<li class="list-inline-item d-inline-flex align-items-center ms-0 ms-sm-4 ms-lg-1 ms-xl-4">
 									<img width="23" height="23" src="{{ asset('front') }}/img/demos/construction/icons/email.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-dark'}" />

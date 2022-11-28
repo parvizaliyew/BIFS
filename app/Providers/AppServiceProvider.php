@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Setting;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
@@ -25,7 +26,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer('*', function ($view) {
-            $view->with('current',Route::current()->getName());
+            $view->with('current',Route::current()->getName() ?? 'index.'.app()->getLocale());
+        });
+
+        view()->composer('*', function ($view) {
+            $view->with('setting',Setting::first());
         });
     }
 }

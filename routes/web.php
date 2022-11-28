@@ -115,3 +115,6 @@ Route::get('/en/projects',[FrontController::class,'project'])->name('project.en'
 
 Route::get('/haqqimizda',[FrontController::class,'about'])->name('about.az');
 Route::get('/en/about',[FrontController::class,'about'])->name('about.en');
+
+Route::get('/layihe/{slug}',[FrontController::class,'project_details'])->name('project_details.az');
+Route::get('/en/project/{slug}',[FrontController::class,'project_details'])->name('project_details.en');

@@ -44,9 +44,9 @@ class PartnerController extends Controller
         {
             $ext=$request->img->extension();
             $fileName=rand(1,100).time().'.'.$ext;
-            $fileNameWithUpload='storage/partners/'.$fileName;
+            $fileNameWithUpload='public/partners/'.$fileName;
 
-            $request->img->storeAs('public/partners/',$fileName);
+            $request->img->move('public/partners/',$fileName);
 
             $partner=new Partner;
             $partner->img=$fileNameWithUpload;

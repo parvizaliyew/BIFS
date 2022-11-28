@@ -169,6 +169,7 @@
     <script src="{{asset('manager/')}}/vendors/chart_am/chart-custom.js"></script>
     @stack('js')
     <script src="{{asset('manager/')}}/js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </body>
     
     <!-- Mirrored from demo.dashboardpack.com/marketing-html/index_3.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 02 Aug 2022 06:20:48 GMT -->
